@@ -1,21 +1,22 @@
+import { PermissionError, } from "./errors"
 import Account, { AccountType, } from "../models/Account"
 import Name from "../models/Name"
 import generateId from "../generators/id"
-import { PermissionError, } from "./errors"
+import AccountRepository from "../repositories/AccountRepository"
 
 class PermissionService {
-  canCreateAccount(account: Account) {
-    return account.getType() !== AccountType.ADMIN
+  canCreateAccount(account: Account | null) {
+    return !account || account.getType() !== AccountType.ADMIN
   }
 }
 
 type CreateAccountRequest = {
-  type: string,
+  type: number,
   firstName: string,
   lastName: string,
 }
 
-export default AccountApplication {
+export default class AccountApplication {
   #accountRepository: AccountRepository
   #permissionService: PermissionService
 
@@ -27,11 +28,11 @@ export default AccountApplication {
     this.#permissionService = permissionService
   }
 
-  createAccount(
-    creator: Account,
+  createAccount (
+    creator: Account | null,
     req: CreateAccountRequest
   ) {
-    if (!this.#permissionService.canCreateAccount()) {
+    if (!this.#permissionService.canCreateAccount(creator)) {
       throw new PermissionError()
     }
     const id = generateId()
