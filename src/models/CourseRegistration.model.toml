@@ -1,0 +1,10 @@
+description = "Course Registation"
+
+[props.id]
+type = "uuid"
+
+[props.courseId]
+type = "string"
+
+[props.studentId]
+type = "string"

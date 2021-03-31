@@ -1,5 +1,5 @@
 export class PermissionError extends Error {
-  constructor (message?: string) {
-    super(message | "Permission denied.")
+  constructor (message: string) {
+    super("PermissionError : " + message)
   }
 }

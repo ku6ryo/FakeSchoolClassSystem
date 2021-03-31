@@ -1,17 +1,14 @@
 import { PermissionError, } from "./errors"
-import Account, { AccountType, } from "../models/Account"
-import Name from "../models/Name"
+import Account from "../models/Account.model"
+import Name from "../models/Name.model"
 import generateId from "../generators/id"
 import AccountRepository from "../repositories/AccountRepository"
+import PermissionService from "../services/PermissionService"
 
-class PermissionService {
-  canCreateAccount(account: Account | null) {
-    return !account || account.getType() !== AccountType.ADMIN
-  }
-}
 
 type CreateAccountRequest = {
   type: number,
+  email: string,
   firstName: string,
   lastName: string,
 }
@@ -33,11 +30,11 @@ export default class AccountApplication {
     req: CreateAccountRequest
   ) {
     if (!this.#permissionService.canCreateAccount(creator)) {
-      throw new PermissionError()
+      throw new PermissionError("Creator cannot create account.")
     }
     const id = generateId()
     const name = new Name(req.firstName, req.lastName)
-    const account = new Account(id, req.type, name)
+    const account = new Account(id, req.type, name, req.email)
     this.#accountRepository.create(account)
   }
 }

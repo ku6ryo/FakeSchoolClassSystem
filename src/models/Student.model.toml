@@ -1,0 +1,15 @@
+description = "Student model"
+
+[props.id]
+type = "uuid"
+
+[props.accountId]
+type = "string"
+
+[props.studentNumber]
+type = "int"
+
+[props.credits]
+type = "float"
+min = 0
+max = 1000

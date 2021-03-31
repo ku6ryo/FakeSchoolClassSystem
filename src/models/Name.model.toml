@@ -1,4 +1,4 @@
-[fields.first]
+[props.first]
 type = "string"
-[fields.last]
+[props.last]
 type = "string"

@@ -1,0 +1,8 @@
+[props.id]
+type = "uuid"
+
+[props.name]
+type = "string"
+
+[props.grade]
+type = "int"

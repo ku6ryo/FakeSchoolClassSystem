@@ -1,0 +1,22 @@
+description = "Course "
+
+[props.id]
+type = "uuid"
+
+[props.displayId]
+type = "string"
+
+[props.category]
+type = "int"
+min = 0
+max = 256
+
+[props.name]
+type = "string"
+minLength = 1
+maxLength = 256
+
+[props.units]
+type = "float"
+min = 0
+max = 50
