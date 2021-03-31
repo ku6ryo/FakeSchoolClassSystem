@@ -31,15 +31,20 @@ export default function parseCourse (data: any) {
   if (typeof name !== "string") {
     throw new ParseError("name is not a string")
   }
-  const units: number = data["units"]
-  if (typeof units !== "number") {
-    throw new ParseError("units is not a number")
+  const description: string = data["description"]
+  if (typeof description !== "string") {
+    throw new ParseError("description is not a string")
+  }
+  const credits: number = data["credits"]
+  if (typeof credits !== "number") {
+    throw new ParseError("credits is not a number")
   }
   return new Course(
     id,
     displayId,
     category,
     name,
-    units,
+    description,
+    credits,
   )
 }

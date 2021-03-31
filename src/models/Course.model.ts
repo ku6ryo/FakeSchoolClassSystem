@@ -26,27 +26,31 @@ export default class Course {
   #displayId: string | null = null
   #category: number | null = null
   #name: string | null = null
-  #units: number | null = null
+  #description: string | null = null
+  #credits: number | null = null
 
   /**
    * @param string id 
    * @param string displayId 
    * @param number category 
    * @param string name 
-   * @param number units 
+   * @param string description 
+   * @param number credits 
    */
   constructor (
     id: string,
     displayId: string,
     category: number,
     name: string,
-    units: number,
+    description: string,
+    credits: number,
   ) {
     this.setId(id)
     this.setDisplayId(displayId)
     this.setCategory(category)
     this.setName(name)
-    this.setUnits(units)
+    this.setDescription(description)
+    this.setCredits(credits)
   }
 
   /**
@@ -169,31 +173,63 @@ export default class Course {
   }
 
   /**
-   * Gets units
+   * Gets description
    */
-  getUnits (): number {
-    if (this.#units === null) {
+  getDescription (): string {
+    if (this.#description === null) {
       throw new UnexpectedNullError()
     }
-    return this.#units
+    return this.#description
   }
 
   /**
-   * Checks units
+   * Checks description
    */
-  checkUnits (value: number) {
-    if (value > 50) {
-      throw new InvalidPropertyError(`${value} is more than 50. (Course.setUnits)`)
+  checkDescription (value: string) {
+    if (value.length < 1) {
+      throw new InvalidPropertyError(`${value} is shorter than 1. (Course.setDescription)`)
+    }
+    if (value.length > 1000) {
+      throw new InvalidPropertyError(`${value} is longer than 1000. (Course.setDescription)`)
     }
   }
 
 
   /**
-   * Sets units
+   * Sets description
    * @param value
    */
-  setUnits (value: number) {
-    this.checkUnits(value)
-    this.#units = value
+  setDescription (value: string) {
+    this.checkDescription(value)
+    this.#description = value
+  }
+
+  /**
+   * Gets credits
+   */
+  getCredits (): number {
+    if (this.#credits === null) {
+      throw new UnexpectedNullError()
+    }
+    return this.#credits
+  }
+
+  /**
+   * Checks credits
+   */
+  checkCredits (value: number) {
+    if (value > 50) {
+      throw new InvalidPropertyError(`${value} is more than 50. (Course.setCredits)`)
+    }
+  }
+
+
+  /**
+   * Sets credits
+   * @param value
+   */
+  setCredits (value: number) {
+    this.checkCredits(value)
+    this.#credits = value
   }
 }
