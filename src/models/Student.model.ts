@@ -64,7 +64,6 @@ export default class Student {
     }
   }
 
-
   /**
    * Sets id
    * @param value
@@ -89,7 +88,6 @@ export default class Student {
    */
   checkAccountId (value: string) {
   }
-
 
   /**
    * Sets accountId
@@ -119,7 +117,6 @@ export default class Student {
     }
   }
 
-
   /**
    * Sets studentNumber
    * @param value
@@ -148,7 +145,6 @@ export default class Student {
     }
   }
 
-
   /**
    * Sets credits
    * @param value
@@ -156,5 +152,17 @@ export default class Student {
   setCredits (value: number) {
     this.checkCredits(value)
     this.#credits = value
+  }
+
+  /**
+   * Clones 
+   */
+  clone (shallow: boolean) {
+    return new Student (
+      this.getId(),
+      this.getAccountId(),
+      this.getStudentNumber(),
+      this.getCredits(),
+    )
   }
 }

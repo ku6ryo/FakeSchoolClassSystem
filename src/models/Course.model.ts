@@ -72,7 +72,6 @@ export default class Course {
     }
   }
 
-
   /**
    * Sets id
    * @param value
@@ -97,7 +96,6 @@ export default class Course {
    */
   checkDisplayId (value: string) {
   }
-
 
   /**
    * Sets displayId
@@ -130,7 +128,6 @@ export default class Course {
     }
   }
 
-
   /**
    * Sets category
    * @param value
@@ -161,7 +158,6 @@ export default class Course {
       throw new InvalidPropertyError(`${value} is longer than 256. (Course.setName)`)
     }
   }
-
 
   /**
    * Sets name
@@ -194,7 +190,6 @@ export default class Course {
     }
   }
 
-
   /**
    * Sets description
    * @param value
@@ -221,8 +216,10 @@ export default class Course {
     if (value > 50) {
       throw new InvalidPropertyError(`${value} is more than 50. (Course.setCredits)`)
     }
+    if (value % 1 !== 0) {
+      throw new InvalidPropertyError(`${value} is not an integer. (Course.setCredits)`)
+    }
   }
-
 
   /**
    * Sets credits
@@ -231,5 +228,19 @@ export default class Course {
   setCredits (value: number) {
     this.checkCredits(value)
     this.#credits = value
+  }
+
+  /**
+   * Clones 
+   */
+  clone (shallow: boolean) {
+    return new Course (
+      this.getId(),
+      this.getDisplayId(),
+      this.getCategory(),
+      this.getName(),
+      this.getDescription(),
+      this.getCredits(),
+    )
   }
 }

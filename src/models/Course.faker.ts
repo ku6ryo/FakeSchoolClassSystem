@@ -16,27 +16,27 @@ export default function fakeCourse (data?: any): Course {
   if (data && typeof data !== "object") {
     throw new FakeError("Given data is not an object. " + String(data))
   }
-  const id: string = data["id"] || faker.()
+  const id: string = data["id"] || faker.datatype.uuid()
   if (typeof id !== "string") {
     throw new FakeError("id is not a string")
   }
-  const displayId: string = data["displayId"] || faker.()
+  const displayId: string = data["displayId"] || faker.random.alphaNumeric()
   if (typeof displayId !== "string") {
     throw new FakeError("displayId is not a string")
   }
-  const category: number = data["category"] || faker.()
+  const category: number = data["category"] || faker.datatype.number()
   if (typeof category !== "number") {
     throw new FakeError("category is not a number")
   }
-  const name: string = data["name"] || faker.()
+  const name: string = data["name"] || faker.name.title()
   if (typeof name !== "string") {
     throw new FakeError("name is not a string")
   }
-  const description: string = data["description"] || faker.()
+  const description: string = data["description"] || faker.commerce.productDescription()
   if (typeof description !== "string") {
     throw new FakeError("description is not a string")
   }
-  const credits: number = data["credits"] || faker.()
+  const credits: number = data["credits"] || faker.datatype.number()
   if (typeof credits !== "number") {
     throw new FakeError("credits is not a number")
   }

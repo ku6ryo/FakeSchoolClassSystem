@@ -60,7 +60,6 @@ export default class CourseRegistration {
     }
   }
 
-
   /**
    * Sets id
    * @param value
@@ -85,7 +84,6 @@ export default class CourseRegistration {
    */
   checkCourseId (value: string) {
   }
-
 
   /**
    * Sets courseId
@@ -112,7 +110,6 @@ export default class CourseRegistration {
   checkStudentId (value: string) {
   }
 
-
   /**
    * Sets studentId
    * @param value
@@ -120,5 +117,16 @@ export default class CourseRegistration {
   setStudentId (value: string) {
     this.checkStudentId(value)
     this.#studentId = value
+  }
+
+  /**
+   * Clones 
+   */
+  clone (shallow: boolean) {
+    return new CourseRegistration (
+      this.getId(),
+      this.getCourseId(),
+      this.getStudentId(),
+    )
   }
 }

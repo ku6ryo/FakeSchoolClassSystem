@@ -12,7 +12,6 @@ faker = "datatype.number"
 type = "ref:Name"
 minLength = 1
 maxLength = 256
-faker = "name.findName"
 
 [props.email]
 type = "email"

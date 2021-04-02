@@ -60,7 +60,6 @@ export default class Term {
     }
   }
 
-
   /**
    * Sets id
    * @param value
@@ -85,7 +84,6 @@ export default class Term {
    */
   checkName (value: string) {
   }
-
 
   /**
    * Sets name
@@ -115,7 +113,6 @@ export default class Term {
     }
   }
 
-
   /**
    * Sets grade
    * @param value
@@ -123,5 +120,16 @@ export default class Term {
   setGrade (value: number) {
     this.checkGrade(value)
     this.#grade = value
+  }
+
+  /**
+   * Clones 
+   */
+  clone (shallow: boolean) {
+    return new Term (
+      this.getId(),
+      this.getName(),
+      this.getGrade(),
+    )
   }
 }

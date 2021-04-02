@@ -2,26 +2,32 @@ description = "Course "
 
 [props.id]
 type = "uuid"
+faker = "datatype.uuid"
 
 [props.displayId]
 type = "string"
+faker = "random.alphaNumeric"
 
 [props.category]
 type = "int"
 min = 0
 max = 256
+faker = "datatype.number"
 
 [props.name]
 type = "string"
 minLength = 1
 maxLength = 256
+faker = "name.title"
 
 [props.description]
 type = "string"
 minLength = 1
 maxLength = 1000
+faker = "commerce.productDescription"
 
 [props.credits]
-type = "float"
+type = "int"
 min = 0
 max = 50
+faker = "datatype.number"

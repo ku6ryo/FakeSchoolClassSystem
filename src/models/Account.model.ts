@@ -66,7 +66,6 @@ export default class Account {
     }
   }
 
-
   /**
    * Sets id
    * @param value
@@ -98,7 +97,6 @@ export default class Account {
     }
   }
 
-
   /**
    * Sets type
    * @param value
@@ -123,7 +121,6 @@ export default class Account {
    */
   checkName (value: Name) {
   }
-
 
   /**
    * Sets name
@@ -153,7 +150,6 @@ export default class Account {
     }
   }
 
-
   /**
    * Sets email
    * @param value
@@ -161,5 +157,17 @@ export default class Account {
   setEmail (value: string) {
     this.checkEmail(value)
     this.#email = value
+  }
+
+  /**
+   * Clones 
+   */
+  clone (shallow: boolean) {
+    return new Account (
+      this.getId(),
+      this.getType(),
+      shallow ? this.getName() : this.getName().clone(false),
+      this.getEmail(),
+    )
   }
 }

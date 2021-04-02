@@ -16,11 +16,11 @@ export default function fakeName (data?: any): Name {
   if (data && typeof data !== "object") {
     throw new FakeError("Given data is not an object. " + String(data))
   }
-  const first: string = data["first"] || faker.()
+  const first: string = data["first"] || faker.name.firstName()
   if (typeof first !== "string") {
     throw new FakeError("first is not a string")
   }
-  const last: string = data["last"] || faker.()
+  const last: string = data["last"] || faker.name.lastName()
   if (typeof last !== "string") {
     throw new FakeError("last is not a string")
   }

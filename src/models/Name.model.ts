@@ -52,7 +52,6 @@ export default class Name {
   checkFirst (value: string) {
   }
 
-
   /**
    * Sets first
    * @param value
@@ -78,7 +77,6 @@ export default class Name {
   checkLast (value: string) {
   }
 
-
   /**
    * Sets last
    * @param value
@@ -86,5 +84,15 @@ export default class Name {
   setLast (value: string) {
     this.checkLast(value)
     this.#last = value
+  }
+
+  /**
+   * Clones 
+   */
+  clone (shallow: boolean) {
+    return new Name (
+      this.getFirst(),
+      this.getLast(),
+    )
   }
 }

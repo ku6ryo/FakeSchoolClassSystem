@@ -1,4 +1,6 @@
 [props.first]
 type = "string"
+faker = "name.firstName"
 [props.last]
 type = "string"
+faker = "name.lastName"
