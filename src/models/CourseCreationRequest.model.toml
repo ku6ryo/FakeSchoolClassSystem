@@ -1,5 +1,3 @@
-description = "Course "
-
 [props.displayId]
 type = "string"
 
