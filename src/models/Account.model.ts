@@ -4,7 +4,7 @@
 // the export members and use as a part or inherit class.
 
 import Name from "./Name.model"
-import isUuid from "validator/lib/isUuid"
+import isUUID from "validator/lib/isUUID"
 import isEmail from "validator/lib/isEmail"
 
 export class UnexpectedNullError extends Error {
@@ -61,7 +61,7 @@ export default class Account {
    * Checks id
    */
   checkId (value: string) {
-    if (!isUuid(value)) {
+    if (!isUUID(value)) {
       throw new InvalidPropertyError(`${value} is not UUID value. (Account.setId)`)
     }
   }

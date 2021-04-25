@@ -2838,10 +2838,10 @@ mkdirp@1.x, mkdirp@^1.0.4:
   dependencies:
     minimist "^1.2.5"
 
-modelgun@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/modelgun/-/modelgun-0.1.6.tgz#19b66f60cf99c7a51025d0cdb50281cd4d64ee34"
-  integrity sha512-LCDfIKo5+OzgwCr/snf7Fs8Mwm3fsVY3CHvJ9AxTukUGpogj8gTnoGOL2prIYEeOci3q0hiNEUwB7L9q9EOvzw==
+modelgun@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/modelgun/-/modelgun-0.1.8.tgz#b39133f5fb484cc3cf6829f74983335254dff708"
+  integrity sha512-8AIv7mapXuPB9dXDpB/QQ7JXrQwyXdGJ/0HxN6toupkNRJKfj2LAj0QomC9GQ6l/wxP4uXLPulGF9phEI9gZZQ==
   dependencies:
     camelcase "^6.2.0"
     minimist "^1.2.5"

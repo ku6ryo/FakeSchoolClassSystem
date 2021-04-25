@@ -18,7 +18,7 @@ export class InvalidPropertyError extends Error {
 
 /**
  * CourseCreationRequest model.
- * Course 
+ * 
  */
 export default class CourseCreationRequest {
   #displayId: string | null = null

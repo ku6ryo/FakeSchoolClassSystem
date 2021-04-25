@@ -3,7 +3,7 @@
 // PLEASE DO NOT EDIT. If you want to extend the functionality, please import
 // the export members and use as a part or inherit class.
 
-import isUuid from "validator/lib/isUuid"
+import isUUID from "validator/lib/isUUID"
 
 export class UnexpectedNullError extends Error {
   constructor () {
@@ -55,7 +55,7 @@ export default class CourseRegistration {
    * Checks id
    */
   checkId (value: string) {
-    if (!isUuid(value)) {
+    if (!isUUID(value)) {
       throw new InvalidPropertyError(`${value} is not UUID value. (CourseRegistration.setId)`)
     }
   }
