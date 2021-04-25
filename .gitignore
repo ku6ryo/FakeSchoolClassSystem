@@ -3,3 +3,5 @@ db.sqlite
 
 yarn-error.log
 .next
+.env
+.env.*
