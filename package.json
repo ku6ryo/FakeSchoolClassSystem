@@ -1,11 +1,10 @@
 {
-  "name": "school",
+  "name": "fake-school",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "A fake school carriculum system.",
   "scripts": {
     "model": "modelgun gen ./src/models",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Ryo Kuroyanagi",
   "license": "MIT",
