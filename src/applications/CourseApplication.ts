@@ -39,7 +39,7 @@ export default class CourseApplication {
   }
 
   searchCourses (
-    account: Account | null,
+    account: Account,
     query: string,
   ): CourseSearchResult {
     if (!this.#permissionService.canSearchCourses(account)) {
