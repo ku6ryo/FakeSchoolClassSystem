@@ -9,7 +9,7 @@ export default class AccontEntrypoint {
     this.#accountApp = accountApp
   }
 
-  createAccount(request: EntrypointRequest<CreateAccountRequest>) {
+  async createAccount(request: EntrypointRequest<CreateAccountRequest>) {
     const requester = request.getRequester()
     const payload = request.getPayload()
     if (!requester) {
