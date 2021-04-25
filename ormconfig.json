@@ -7,12 +7,8 @@
    "migrations": [
       "src/repositories/db/migrations/**/*.ts"
    ],
-   "subscribers": [
-      "src/subscriber/**/*.ts"
-   ],
    "cli": {
       "entitiesDir": "src/repositories/db/entities",
-      "migrationsDir": "src/repositories/db/migrations",
-      "subscribersDir": "src/subscriber"
+      "migrationsDir": "src/repositories/db/migrations"
    }
 }
