@@ -19,3 +19,5 @@ jobs:
         run: yarn install
       - name: Creates sqlite db
         run: yarn ts-node node_modules/typeorm/cli.js migration:run
+      - name: Test
+        run: yarn test

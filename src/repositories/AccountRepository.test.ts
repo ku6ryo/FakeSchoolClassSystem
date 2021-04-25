@@ -42,3 +42,39 @@ test("Create / Get", async () => {
   expect(created.getName().getFirst()).toBe(firstName)
   expect(created.getName().getLast()).toBe(lastName)
 })
+
+test("Update", async () => {
+  const connection = getConnection()
+  const repo = new AccountRepository(connection)
+  const id = generateId()
+  const type = AccountType.ADMIN
+  const email = faker.internet.email()
+  const firstName = faker.name.firstName()
+  const lastName = faker.name.lastName()
+
+  const account = new Account(id, type, email, new Name(firstName, lastName))
+  await repo.create(account)
+  await repo.get(id)
+
+  const newEmail = faker.internet.email()
+  account.setEmail(newEmail)
+
+  await repo.update(account)
+  const updated = await repo.get(id)
+  expect(updated.getEmail()).toBe(newEmail)
+})
+
+test("Delete", async () => {
+  const connection = getConnection()
+  const repo = new AccountRepository(connection)
+  const id = generateId()
+  const type = AccountType.ADMIN
+  const email = faker.internet.email()
+  const firstName = faker.name.firstName()
+  const lastName = faker.name.lastName()
+
+  await repo.create(new Account(id, type, email, new Name(firstName, lastName)))
+  await repo.delete(id)
+
+  expect(await repo.exists(id)).toBe(false)
+})

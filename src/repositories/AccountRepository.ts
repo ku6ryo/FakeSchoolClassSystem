@@ -24,6 +24,17 @@ export default class AccountRepository implements AccountRepositoryInterface {
     await this.#repository.insert(entity)
   }
 
+  async exists (id: string) {
+    try {
+      await this.get(id)
+    } catch (e) {
+      if (e instanceof AccountNotFound) {
+        return false
+      }
+    }
+    return true
+  }
+
   async get (id: string) {
     const entity = await this.#repository.findOne(id)
     if (!entity) {
