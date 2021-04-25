@@ -7,13 +7,13 @@ import isUuid from "validator/lib/isUuid"
 
 export class UnexpectedNullError extends Error {
   constructor () {
-    super("Term UnexpectedNullError: If you see this, ModelGun validation may be broken.")
+    super("Term UnexpectedNullError: If you see this, generated code by modelgun may be broken.")
   }
 }
 
 export class InvalidPropertyError extends Error {
   constructor (message: string) {
-    super("Term UnexpectedNullError: " + message)
+    super("Term InvalidPropertyError: " + message)
   }
 }
 
@@ -131,5 +131,16 @@ export default class Term {
       this.getName(),
       this.getGrade(),
     )
+  }
+
+  /**
+   * Creates an object.
+   */
+  toObject () {
+    return {
+      id: this.getId(),
+      name: this.getName(),
+      grade: this.getGrade(),
+    }
   }
 }

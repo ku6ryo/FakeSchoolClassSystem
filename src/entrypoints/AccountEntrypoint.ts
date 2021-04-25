@@ -1,6 +1,7 @@
 import AccountApplication from "../applications/AccountApplication"
 import EntrypointRequest from "../entrypoints/EntrypointRequest"
-import { InvalidPayloadError, } from "./errors"
+import { UnauthorizedError, } from "./errors"
+import CreateAccountRequest from "../models/CreateAccountRequest.model"
 
 export default class AccontEntrypoint {
   #accountApp: AccountApplication
@@ -8,23 +9,12 @@ export default class AccontEntrypoint {
     this.#accountApp = accountApp
   }
 
-  createAccount(request: EntrypointRequest) {
+  createAccount(request: EntrypointRequest<CreateAccountRequest>) {
     const requester = request.getRequester()
     const payload = request.getPayload()
-    if (!payload.firstName || payload.firstName) {
-      throw new InvalidPayloadError()
+    if (!requester) {
+      throw new UnauthorizedError("User not given.")
     }
-    if (!payload.lastName) {
-      throw new InvalidPayloadError()
-    }
-    if (!payload.type) {
-      throw new InvalidPayloadError()
-    }
-    const creationRequest = {
-      firstName: payload.firstName,
-      lastName: payload.lastName,
-      type: payload.type,
-    }
-    this.#accountApp.createAccount(requester, creationRequest)
+    this.#accountApp.createAccount(requester, payload)
   }
 }

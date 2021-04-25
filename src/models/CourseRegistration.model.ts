@@ -7,13 +7,13 @@ import isUuid from "validator/lib/isUuid"
 
 export class UnexpectedNullError extends Error {
   constructor () {
-    super("CourseRegistration UnexpectedNullError: If you see this, ModelGun validation may be broken.")
+    super("CourseRegistration UnexpectedNullError: If you see this, generated code by modelgun may be broken.")
   }
 }
 
 export class InvalidPropertyError extends Error {
   constructor (message: string) {
-    super("CourseRegistration UnexpectedNullError: " + message)
+    super("CourseRegistration InvalidPropertyError: " + message)
   }
 }
 
@@ -128,5 +128,16 @@ export default class CourseRegistration {
       this.getCourseId(),
       this.getStudentId(),
     )
+  }
+
+  /**
+   * Creates an object.
+   */
+  toObject () {
+    return {
+      id: this.getId(),
+      courseId: this.getCourseId(),
+      studentId: this.getStudentId(),
+    }
   }
 }

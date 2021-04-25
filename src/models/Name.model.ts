@@ -6,13 +6,13 @@
 
 export class UnexpectedNullError extends Error {
   constructor () {
-    super("Name UnexpectedNullError: If you see this, ModelGun validation may be broken.")
+    super("Name UnexpectedNullError: If you see this, generated code by modelgun may be broken.")
   }
 }
 
 export class InvalidPropertyError extends Error {
   constructor (message: string) {
-    super("Name UnexpectedNullError: " + message)
+    super("Name InvalidPropertyError: " + message)
   }
 }
 
@@ -94,5 +94,15 @@ export default class Name {
       this.getFirst(),
       this.getLast(),
     )
+  }
+
+  /**
+   * Creates an object.
+   */
+  toObject () {
+    return {
+      first: this.getFirst(),
+      last: this.getLast(),
+    }
   }
 }

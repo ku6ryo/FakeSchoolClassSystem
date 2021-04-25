@@ -2567,6 +2567,16 @@ mkdirp@1.x:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
+modelgun@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/modelgun/-/modelgun-0.1.6.tgz#19b66f60cf99c7a51025d0cdb50281cd4d64ee34"
+  integrity sha512-LCDfIKo5+OzgwCr/snf7Fs8Mwm3fsVY3CHvJ9AxTukUGpogj8gTnoGOL2prIYEeOci3q0hiNEUwB7L9q9EOvzw==
+  dependencies:
+    camelcase "^6.2.0"
+    minimist "^1.2.5"
+    mustache "^4.2.0"
+    toml "^3.0.0"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -2581,6 +2591,11 @@ mustache@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/mustache/-/mustache-4.1.0.tgz#8c1b042238a982d2eb2d30efc6c14296ae3f699d"
   integrity sha512-0FsgP/WVq4mKyjolIyX+Z9Bd+3WS8GOwoUTyKXT5cTYMGeauNTi2HPCwERqseC1IHAy0Z7MDZnJBfjabd4O8GQ==
+
+mustache@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/mustache/-/mustache-4.2.0.tgz#e5892324d60a12ec9c2a73359edca52972bf6f64"
+  integrity sha512-71ippSywq5Yb7/tVYyGbkBggbU8H3u5Rz56fH60jGFgr8uHwxs+aSKeqmluIVzM0m0kB7xQjKS6qPfd0b2ZoqQ==
 
 nanomatch@^1.2.9:
   version "1.2.13"

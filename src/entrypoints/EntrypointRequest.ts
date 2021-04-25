@@ -1,9 +1,9 @@
-import Account from "../models/Account"
+import Account from "../models/Account.model"
 
-export default class EntrypointRequest {
+export default class EntrypointRequest<T> {
   #requester: Account | null
-  #payload: any
-  constructor (requester: Account | null, payload: any) {
+  #payload: T
+  constructor (requester: Account | null, payload: T) {
     this.#requester = requester
     this.#payload = payload
   }
