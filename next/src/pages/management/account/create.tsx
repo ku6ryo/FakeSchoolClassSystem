@@ -1,6 +1,6 @@
-
 import { useSession, } from "next-auth/client"
 import React, { useCallback, useEffect, useState } from "react"
+import axios from "axios"
 
 export default function Component () {
   const [ session, loading ] = useSession()
@@ -15,9 +15,11 @@ export default function Component () {
   }, [])
 
   const onCreateClick = useCallback(async () => {
-    const res = await fetch("/api/course/create")
-    const json = await res.json()
-    console.log(json)
+    const res = await axios.post("/api/backend/account/create", {
+      type: 0,
+      email,
+    })
+    console.log(res.data)
   }, [])
 
   if (loading) {
