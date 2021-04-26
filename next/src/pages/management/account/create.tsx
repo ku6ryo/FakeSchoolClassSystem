@@ -15,12 +15,15 @@ export default function Component () {
   }, [])
 
   const onCreateClick = useCallback(async () => {
-    const res = await axios.post("/api/backend/account/create", {
-      type: 0,
-      email,
-    })
-    console.log(res.data)
-  }, [])
+    try {
+      await axios.post("/api/proxy/account.createAccount", {
+        type: 0,
+        email,
+      })
+    } catch (e) {
+      console.log("error")
+    }
+  }, [email])
 
   if (loading) {
     return "loading"
