@@ -1,6 +1,6 @@
 {
   "name": "fake-school-class-system-next",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A fake school class system frontend on Next.js.",
   "scripts": {
     "dev": "next dev",

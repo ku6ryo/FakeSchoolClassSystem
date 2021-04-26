@@ -1,6 +1,6 @@
 {
   "name": "fake-school-class-system-api",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A fake school carriculum system API.",
   "scripts": {
     "dev": "nodemon -L",
