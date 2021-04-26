@@ -1,5 +1,6 @@
 # Overview
-This is a project of a fake school class system.
+This is a project of a fake school class system. This is a kind of a practice of
+ku6ryo to develop a relatively large system fast with latest technologies.
 
 # System components
 ```
